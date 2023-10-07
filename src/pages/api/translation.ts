@@ -29,7 +29,8 @@ export default async function textToSpeech(
       console.log("error: ", error);
       res.status(400).json({ message: "Something went wrong", error });
     }
+  } else {
+    // Handle other HTTP methods if needed
+    res.status(405).json({ message: "Method not allowed" });
   }
-
-  res.status(200).json({ name: "John Doe" });
 }
