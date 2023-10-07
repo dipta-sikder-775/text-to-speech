@@ -1,27 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "./group/main.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  html,
+  body {
+    @apply font-sans w-full h-full;
   }
-}
+  body {
+    @apply grid grid-rows-[auto,1fr,auto];
+  }
+  .container {
+    @apply mx-auto px-4;
+  }
+  .container.dark {
+    @apply bg-primary;
+  }
+  a,
+  label,
+  span,
+  p,
+  li,
+  button {
+    @apply text-sm xl:text-base;
+  }
+  .text-decorator {
+    @apply relative after:content-empty after:top-full after:absolute after:left-0 after:right-0 after:h-4 after:bg-textDecorator after:bg-no-repeat after:bg-contain;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @font-face {
+    font-family: "Whyte Inktrap";
+    src: url("../fonts/WhyteInktrap-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Whyte Inktrap";
+    src: url("../fonts/WhyteInktrap-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Whyte Inktrap";
+    src: url("../fonts/WhyteInktrap-Bold.ttf") format("woff");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Whyte Inktrap";
+    src: url("../fonts/WhyteInktrap-BoldItalic.ttf") format("woff");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .section {
+    @apply py-14 xl:py-20;
+  }
+
+  .section-header {
+    @apply flex flex-col gap-3 items-center justify-center;
+  }
+  .section-header.light {
+    @apply [&>*]:text-white;
+  }
+
+  .section-title {
+    @apply font-WhyteInktrap text-2xl xl:text-[2rem] xl:leading-[2.5rem] text-gray-900 text-center max-w-[30ch];
+  }
+  .section-subtitle {
+    @apply text-gray-700 text-sm xl:text-lg text-center font-light max-w-[55ch] xl:max-w-[65ch];
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-WhyteInktrap text-gray-900;
+  }
+  .more-link {
+    @apply font-medium hover:text-gray-800 text-gray-900 inline-block text-sm [&>img]:hover:translate-x-1 flex items-center gap-2;
+  }
+  .more-link img {
+    @apply transition-all duration-150 ease-in-out w-4 xl:w-5;
+  }
+  .card-title {
+    @apply font-WhyteInktrap font-medium text-base lg:text-lg;
+  }
+  .card__description {
+    @apply text-gray-500 text-sm font-light xl:font-normal max-w-[24rem];
+  }
+  .container-grid {
+    @apply grid gap-10 xl:gap-16;
+  }
+  .page-header {
+    @apply section bg-primary flex justify-center items-center;
+  }
+  .page-header__title {
+    @apply section-title inline-block mx-auto relative text-white after:content-empty
+         after:bg-secondary after:absolute after:top-full
+         after:h-1 after:w-full after:left-0 after:right-0;
+  }
+  .page-header__title::after {
+    max-width: 5rem;
+    margin: 0.4rem auto 0 auto;
+  }
+  .after-shadow {
+    @apply after:content-empty after:block after:absolute after:bottom-0 after:left-0 after:right-0 after:bg-aboutShadow after:h-1/2;
+  }
+  .after-user-image {
+    @apply h-full w-full flex flex-col justify-end items-center relative;
+  }
+  .after-user-image img {
+    @apply h-full w-full absolute top-0 bottom-0 left-0 right-0 -z-10;
+  }
+  .hover-shadow {
+    @apply transition-all duration-100 ease-in-out hover:shadow-lg hover:shadow-[#25252520];
+  }
+  .hover-scale {
+    @apply transition-all duration-100 ease-in-out hover:shadow-lg hover:shadow-[#c5c2c280] hover:scale-105;
+  }
+  .footer-links li a {
+    @apply transition-all duration-100 ease-in-out hover:!scale-105;
+  }
+
+  .footer-social-links a {
+    @apply transition-all duration-100 ease-in-out hover:!scale-105;
+  }
+  .grid-two {
+    @apply container grid lg:grid-cols-2 gap-8 lg:gap-8 xl:gap-16;
+  }
+  .container-text-info {
+    @apply py-4 flex flex-col justify-center [&>*]:text-center [&>*]:lg:!text-left [&>p]:text-[#3F3F46] [&>p]:text-sm [&>p]:font-light [&>p]:xl:text-lg gap-4 xl:gap-6;
+  }
 }

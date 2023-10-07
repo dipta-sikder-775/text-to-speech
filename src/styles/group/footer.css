@@ -1,0 +1,20 @@
+@layer base {
+    .footer {
+        @apply bg-primary py-8;
+    }
+    .footer-logo {
+        @apply h-16 w-16 xl:h-28 xl:w-28;
+    }
+    .footer-links {
+        @apply flex flex-col items-center xl:flex-row xl:gap-4;
+    }
+    .footer-links a {
+        @apply block text-gray-100 hover:text-white px-4 py-2;
+    }
+    .footer-container {
+        @apply flex flex-col xl:flex-row justify-between items-center gap-8 xl:gap-6;
+    }
+    .footer-social-links {
+        @apply flex items-center gap-4;
+    }
+}

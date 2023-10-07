@@ -1,0 +1,21 @@
+@layer components {
+    .btn {
+        @apply px-6 py-3 xl:px-8 xl:py-4 font-semibold text-white transition-all duration-100 ease-in-out rounded-sm;
+    }
+    .btn-primary {
+        @apply btn bg-primary  hover:bg-[#011545]  border-1 border-primary hover:border-[#011545];
+    }
+    .btn-secondary {
+        @apply btn bg-secondary hover:bg-[#F5CF00] text-gray-900 border-1 border-secondary hover:border-[#F5CF00];
+    }
+
+    .btn-outline {
+        @apply btn  border-1 border-primary text-primary  hover:bg-[#EFF3FD];
+    }
+    .btn-pagination {
+        @apply px-3 xl:px-[0.9rem] py-2 rounded-md xl:text-lg border-gray-200 border-1 text-gray-500 font-light;
+    }
+    .btn-pagination.active {
+        @apply px-3 xl:px-[0.9rem] py-2 rounded-md xl:text-lg border-gray-200 border-1 font-light btn-primary text-white;
+    }
+}

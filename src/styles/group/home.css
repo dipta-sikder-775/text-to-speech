@@ -1,0 +1,33 @@
+@layer base {
+    .hero {
+        @apply container flex flex-col items-center justify-center gap-4 xl:gap-8;
+    }
+    .hero-header {
+        @apply font-WhyteInktrap italic font-bold text-gray-900 text-2xl leading-[2.4rem] xl:leading-[5rem] [&>span]:text-2xl xl:text-[4rem] xl:[&>span]:text-[4rem] xl:[&>span]:leading-[5rem] max-w-[20ch] xl:max-w-[22ch] text-center inline-block mx-auto;
+    }
+
+    .technologies-card-container {
+        @apply grid gap-4 md:grid-cols-3 xl:gap-6;
+    }
+
+    .technologies-card {
+        @apply bg-[#FAFAFA] p-4 xl:p-6 grid gap-4 xl:gap-6;
+    }
+    .technologies-card__icon {
+        @apply bg-secondary inline-block p-3 [&>img]:w-full [&>img]:h-full h-12 w-12 xl:h-14 xl:w-14;
+    }
+    .technologies-card__content {
+        @apply grid gap-1;
+    }
+
+    .advantages-container {
+        @apply px-4 xl:!px-10 py-16 xl:py-20;
+    }
+
+    .advantages-card-container {
+        @apply grid gap-4 xl:gap-6 xl:grid-cols-4;
+    }
+    .advantages-card {
+        @apply technologies-card bg-white pb-16 gap-4;
+    }
+}
